@@ -21,15 +21,21 @@
 
 void main(void)
 {
+	// set the direction as output
 	DDRA =0xff ;
+	
+	//iterator definition 
 	sint8 iterator =0 ;
 	while(1)
 	{
+		// turn on the leds from 0 to 7 with delay 200 ms
 		for(iterator = 0 ; iterator< NUM_OF_LEDS ;iterator++)
 		{
 			PORTA = SET_BIT(PORTA,iterator);
 			_delay_ms(200);
 		}
+		
+		// turn off the leds from 0 to 7 with delay 200 ms
 		for(iterator = 0 ; iterator< NUM_OF_LEDS ;iterator++)
 		{
 			PORTA = CLR_BIT(PORTA,iterator);
